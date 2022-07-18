@@ -22,6 +22,30 @@ class ColorsManager{
   static const colorTextForgetPasswordLoginScreen=Color(0xFF2277FE);
   static const colorTextCreateAccountLoginScreen=Color(0xFF2277FE);
   static const colorTextDoNotHaveAccountLoginScreen=Color(0xFF7E7E7E);
+  static const colorTextSearchHomeScreen=Color(0xFF7E7E7E);
+  static const colorBorderContainerHomeScreen=Color(0xFFEBF0FF);
+  static const colorIconsHomeScreen=Color(0xFF7E7E7E);
+  static const colorCategoriesHomeScreen=Color(0xFF121212);
+  static const colorcategoryNameHomeScreen=Color(0xFF7E7E7E);
+  static const colorViewAllHomeScreen=Color(0xFF2277FE);
+  static const colorSpecialForYouHomeScreen=Color(0xFF121212);
+  static const colorHotelNameHomeScreen=Color(0xFF121212);
+  static const colorHotelAddressScreen=Color(0xFF7E7E7E);
+  static const colorIrdNewHomeScreen=Color(0xFF2277FE);
+  static const colorIrdOldNHomeScreen=Color(0xFF7E7E7E);
+  static const colorTextDiscountPercentageHomeScreen=Color(0xFFFB7181);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

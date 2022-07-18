@@ -1,24 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'Feature/Localizations/LocalizationsModel/AppLocale.dart';
 import 'Feature/Providers/ProviderChangeStatus.dart';
-import 'Feature/View/Screens/SplashScreen/SplashScreen.dart';
+import 'Feature/View/Screens/HomeScreen/HomeScreen.dart';
+
 
 void main() {
   runApp(const MyApp());
+  SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+    statusBarColor: Colors.white,
+    statusBarIconBrightness: Brightness.dark
+
+  ));
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (ctx) => ProviderChangeStatus(),),
       ],
       builder: (context, child) {
         return MaterialApp(
+          theme: ThemeData(
+            brightness: Brightness.light,
+          ),
           debugShowCheckedModeBanner: false,
           localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
@@ -42,7 +54,7 @@ class MyApp extends StatelessWidget {
             }
           },
           // locale: Locale("en", ""),
-          home:  const SpalshScreen(),
+          home:   HomeScreen(),
         );
       },
     );

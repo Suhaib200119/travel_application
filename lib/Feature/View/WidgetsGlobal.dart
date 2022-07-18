@@ -81,7 +81,7 @@ class WidgetsGlobal {
     return Text(
       "${getLang(context, "$text")}",
       style: TextStyle(
-          fontSize: fontSize, color: fontcolor, fontWeight: FontWeight.w700),
+          fontSize: fontSize, color: fontcolor, fontWeight: fontWeight),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:travel_application/Feature/View/WidgetsGlobal.dart';
 
 import '../../../../Core/ColorsManager.dart';
@@ -124,7 +125,22 @@ class WidgetsHomeScreen {
                       fontSize: 16,
                       fontcolor: ColorsManager.colorHotelNameHomeScreen,
                       fontWeight: FontWeight.w700),
-                  const SizedBox(height: 5,),
+                RatingBar.builder(
+                  itemSize: 20,
+                  initialRating: 3,
+                  minRating: 1,
+                  direction: Axis.horizontal,
+                  allowHalfRating: true,
+                  itemCount: 5,
+                  itemPadding: EdgeInsets.symmetric(horizontal: 1),
+                  itemBuilder: (context, _) =>  const Icon(
+                    Icons.star,
+                    color: Colors.amber,
+                  ),
+                  onRatingUpdate: (rating) {
+                    print(rating);
+                  },
+                ),
                   WidgetsGlobal.customText(
                       context: context,
                       text: hotelAddress,

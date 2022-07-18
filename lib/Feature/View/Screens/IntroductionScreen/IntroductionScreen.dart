@@ -71,20 +71,29 @@ class IntroductionScreen extends StatelessWidget {
             const Spacer(),
             if (providerController.indexPageView != 2)
               WidgetsIntroductionScreen.containerPageViewLessThan2(
-                  context: context, skipText: "Skip", nextText: "Next",function_skip: (){
-                Navigator.of(context).push(MaterialPageRoute(builder: (ctx){
-                  return LoginScreen();
-                }));
-              },function_next: (){
-
-              },)
+                context: context,
+                skipText: "Skip",
+                nextText: "Next",
+                function_skip: () {
+                  Navigator.of(context)
+                      .pushReplacement(MaterialPageRoute(builder: (ctx) {
+                    return LoginScreen();
+                  }));
+                },
+                function_next: () {
+                  pageController.nextPage(duration:Duration(seconds: 1), curve: Curves.easeOut);
+                },
+              )
             else
               WidgetsIntroductionScreen.containerPageView3(
-                  context: context, startText: "Start",function_start: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (ctx){
+                  context: context,
+                  startText: "Start",
+                  function_start: () {
+                    Navigator.of(context)
+                        .pushReplacement(MaterialPageRoute(builder: (ctx) {
                       return LoginScreen();
                     }));
-              })
+                  })
           ],
         ),
       ),

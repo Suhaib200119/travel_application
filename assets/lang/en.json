@@ -1,4 +1,12 @@
 {
+
+  "Global": "Global",
+  "Welcome to Travel App": "Welcome to Travel App",
+  "Enter Email": "Enter Email",
+  "You must enter the email": "You must enter the email",
+  "Enter Password": "Enter Password",
+  "You must enter the password": "You must enter the password",
+
   "introduction Screen": "introductionScreen",
   "Hi, Welcome": "Hi, Welcome",
   "In the Travel app you can order planes,Hotel, Train, event searchto Car Rental": "In the Travel app you can order planes,Hotel, Train, event searchto Car Rental",
@@ -12,14 +20,24 @@
 
 
   "login Screen": "loginScreen",
-  "Welcome to Travel App": "Welcome to Travel App",
   "Sign in to continue": "Sign in to continue",
-  "You must enter the email": "You must enter the email",
-  "Enter Email": "Enter Email",
-  "Enter Password": "Enter Password",
   "sign in": "sign in",
   "OR": "OR",
   "Sign in with Google": "Sign in with Google",
-  "Sign in with Facebook": "Sign in with Facebook"
+  "Sign in with Facebook": "Sign in with Facebook",
+  "Forgot the password": "Forgot the password",
+  "Don't have an account yet?": "Don't have an account yet?",
+  "Create account": "create account",
+
+  "sigup Screen": "sigup Screen",
+  "Enter full name": "Enter full name",
+  "You must enter the full name": "You must enter the full name",
+  "Repeat Password": "Repeat Password",
+  "You must repeat the same password": "You must repeat the same password",
+  "Create a new account": "Create a new account",
+  "Create": "Create",
+  "do you have an account?": "do you have an account?",
+  "click here": "click here"
+
 
 }

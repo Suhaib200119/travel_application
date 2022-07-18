@@ -4,6 +4,8 @@ import 'package:travel_application/Feature/Localizations/LocalizationsModel/AppL
 import 'package:travel_application/Feature/View/Screens/LoginScreen/WidgetLoginScreen.dart';
 import 'package:travel_application/Feature/View/WidgetsGlobal.dart';
 
+import '../SignUpScreen/SignUpScreen.dart';
+
 class LoginScreen extends StatelessWidget {
   var formKey = GlobalKey<FormState>();
   TextEditingController tec_email = TextEditingController();
@@ -18,31 +20,27 @@ class LoginScreen extends StatelessWidget {
             margin: const EdgeInsetsDirectional.only(
               start: 16,
               end: 15,
-              top: 112,
+              top: 40,
             ),
             width: MediaQuery.of(context).size.width,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  "assets/images/logoLoginScreen.png",
-                  width: 72,
-                  height: 72,
-                ),
+                WidgetsGlobal.imageLogo(),
                 const SizedBox(
                   height: 16,
                 ),
-                WidgetsLoginScreen.customText(
+                WidgetsGlobal.customText(
                   context: context,
                   text: "Welcome to Travel App",
                   fontSize: 16,
-                  fontcolor: ColorsManager.colorTextHreaderLoginScreen,
+                  fontcolor: ColorsManager.colorTextHeaderLoginScreen,
                   fontWeight: FontWeight.w700,
                 ),
                 const SizedBox(
                   height: 8,
                 ),
-                WidgetsLoginScreen.customText(
+                WidgetsGlobal.customText(
                   context: context,
                   text: "Sign in to continue",
                   fontSize: 12,
@@ -56,64 +54,34 @@ class LoginScreen extends StatelessWidget {
                   key: formKey,
                   child: Column(
                     children: [
-                      TextFormField(
-                        controller: tec_email,
-                        keyboardType: TextInputType.emailAddress,
-                        validator: (inputUser) {
-                          if (inputUser!.trim().isEmpty) {
-                            return "${getLang(context, "you must enter the email")}";
-                          } else {
-                            return null;
-                          }
-                        },
-                        decoration: InputDecoration(
-                          prefixIcon: const Icon(Icons.email_outlined),
-                          hintText: "${getLang(context, "Enter Email")}",
-                          border: const OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  width: 20, color: Color(0xFFEBF0FF))),
-                          enabledBorder: const OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: ColorsManager
-                                  .borderColorTextFormFieldLoginScreen,
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
+                      WidgetsGlobal.myTextFormField(
+                          context: context,
+                          controller: tec_email,
+                          keyboardType: TextInputType.emailAddress,
+                          errorMessage: "You must enter the email",
+                          prefixIcon: Icon(Icons.email_outlined),
+                          hintText: "Enter Email"),
+                      const SizedBox(
                         height: 8,
                       ),
-                      TextFormField(
-                        controller: tec_password,
-                        keyboardType: TextInputType.emailAddress,
-                        validator: (inputUser) {
-                          if (inputUser!.trim().isEmpty) {
-                            return "${getLang(context, "you must enter the password")}";
-                          } else {
-                            return null;
-                          }
-                        },
-                        decoration: InputDecoration(
+                      WidgetsGlobal.myTextFormField(
+                          context: context,
+                          controller: tec_password,
+                          keyboardType: TextInputType.visiblePassword,
+                          errorMessage: "You must enter the password",
                           prefixIcon: const Icon(Icons.lock_outline),
-                          hintText: "${getLang(context, "Enter Password")}",
-                          border: const OutlineInputBorder(
-                            borderSide: BorderSide(
-                              width: 20,
-                              color: Color(0xFFEBF0FF),
-                            ),
-                          ),
-                          enabledBorder: const OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: ColorsManager
-                                  .borderColorTextFormFieldLoginScreen,
-                            ),
-                          ),
-                        ),
-                      ),
+                          hintText: "Enter Password"),
+
                       WidgetsGlobal.myButton(
                         context: context,
                         text: "sign in",
-                        function: () {},
+                        function: () {
+                          if (formKey.currentState!.validate()) {
+                            print("email: ${tec_email.text.trim()}\n");
+                            print("password: ${tec_password.text.trim()}\n");
+
+                          }
+                        },
                       ),
                     ],
                   ),
@@ -147,7 +115,8 @@ class LoginScreen extends StatelessWidget {
                   context: context,
                   text: "Sign in with Google",
                   imageName: "google.png",
-                  function: () {},),
+                  function: () {},
+                ),
                 const SizedBox(
                   height: 8,
                 ),
@@ -155,8 +124,46 @@ class LoginScreen extends StatelessWidget {
                   context: context,
                   text: "Sign in with Facebook",
                   imageName: "facebook .png",
-                  function: () {},),
-
+                  function: () {},
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: WidgetsGlobal.customText(
+                      context: context,
+                      text: "Forgot the password",
+                      fontSize: 12,
+                      fontcolor:
+                          ColorsManager.colorTextForgetPasswordLoginScreen,
+                      fontWeight: FontWeight.w700),
+                ),
+                Row(
+                  children: [
+                    Spacer(),
+                    WidgetsGlobal.customText(
+                        context: context,
+                        text: "Don't have an account yet?",
+                        fontSize: 12,
+                        fontcolor:
+                            ColorsManager.colorTextCreateAccountLoginScreen,
+                        fontWeight: FontWeight.w700),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (ctx){return SignUpScreen();}));
+                      },
+                      child: WidgetsGlobal.customText(
+                          context: context,
+                          text: "Create account",
+                          fontSize: 12,
+                          fontcolor: ColorsManager
+                              .colorTextDoNotHaveAccountLoginScreen,
+                          fontWeight: FontWeight.w700),
+                    ),
+                    Spacer(),
+                  ],
+                ),
               ],
             ),
           ),

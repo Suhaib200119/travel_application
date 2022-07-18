@@ -2,27 +2,16 @@ import 'package:flutter/material.dart';
 
 import '../../../../Core/ColorsManager.dart';
 import '../../../Localizations/LocalizationsModel/AppLocale.dart';
+import '../../WidgetsGlobal.dart';
 
 class WidgetsLoginScreen {
-  static Widget customText({
-    required BuildContext context,
-    required String text,
-    required double fontSize,
-    required Color fontcolor,
-    required FontWeight fontWeight,
-  }) {
-    return Text(
-      "${getLang(context, "$text")}",
-      style: TextStyle(
-          fontSize: fontSize, color: fontcolor, fontWeight: FontWeight.w700),
-    );
-  }
+
 
   static Widget myDivider() {
     return const Expanded(
       flex: 2,
       child: Divider(
-        color: ColorsManager.dividerColorLohinScreen,
+        color: ColorsManager.dividerColorLoginScreen,
         height: 1,
       ),
     );
@@ -49,7 +38,7 @@ class WidgetsLoginScreen {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Spacer(),
-            customText(
+            WidgetsGlobal.customText(
                 context: context,
                 text: text,
                 fontSize: 14,

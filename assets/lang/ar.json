@@ -1,7 +1,15 @@
 {
+
+  "Global": "Global",
+  "Welcome to Travel App": "مرحبًا بك في تطبيق السفر",
+  "Enter Email": "أدخل البريد الإلكتروني",
+  "You must enter the email": "يجب عليك إدخال البريد الإلكتروني",
+  "Enter Password": "أدخل كلمة المرور",
+  "You must enter the password": "يجب عليك إدخال كلمة المرور",
+
   "Hi, Welcome": "مرحبا , اهلا",
   "In the Travel app you can order planes,Hotel, Train, event searchto Car Rental": "في تطبيق السفر ، يمكنك طلب الطائرات والفنادق والقطارات والبحث عن الأحداث لتأجير السيارات",
-  "Easier to Travel": "Easier to Travel",
+  "Easier to Travel": "أسهل في السفر",
   "With various features available for you in the travel app, your vacation or trip will be easier and more comfortable": "مع العديد من الميزات المتاحة لك في تطبيق السفر ، ستكون عطلتك أو رحلتك أسهل وأكثر راحة",
   "Many New Features": "العديد من الميزات الجديدة",
   "Now the Travel app has many new features and a new look, you can try it": "الآن يحتوي تطبيق Travel على العديد من الميزات الجديدة ومظهر جديد ، يمكنك تجربته",
@@ -10,15 +18,28 @@
   "Start": "ابدأ",
 
   "login Screen": "loginScreen",
-  "Welcome to Travel App": "مرحبًا بك في تطبيق السفر",
   "Sign in to continue": "تسجيل الدخول للمتابعة",
-  "You must enter the email": "يجب عليك إدخال البريد الإلكتروني",
-  "Enter Email": "أدخل البريد الإلكتروني",
-  "Enter Password": "أدخل كلمة المرور",
+
   "sign in": "تسجيل الدخول",
   "OR": "أو",
   "Sign in with Google": "تسجيل الدخول بواسطة جوجل",
-  "Sign in with Facebook": "تسجيل الدخول بواسطة فيس بوك"
+  "Sign in with Facebook": "تسجيل الدخول بواسطة فيس بوك",
+  "Forgot the password": "نسيت كلمة المرور",
+  "Don't have an account yet?": "لا تملك حسابا حتى الآن؟",
+  "Create account": "إنشاء حساب",
+
+
+
+  "sigup Screen": "sigup Screen",
+  "Enter full name": "أدخل الاسم الكامل",
+  "You must enter the full name": "يجب عليك إدخال الاسم الكامل",
+  "Repeat Password": "اعد كلمة السر",
+  "You must repeat the same password": "يجب عليك تكرار نفس كلمة المرور",
+  "Create a new account": "إنشاء حساب جديد",
+  "Create": "إنشاء",
+  "do you have an account?": "هل لديك حساب؟",
+  "click here": "انقر هنا"
+
 
 
 

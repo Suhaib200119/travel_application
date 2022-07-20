@@ -1,27 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:travel_application/Feature/Model/HotelHomeClass.dart';
+import 'package:travel_application/Feature/DataList/DataList.dart';
+import 'package:travel_application/Feature/Model/HotelClass.dart';
+import 'package:travel_application/Feature/View/Screens/CarsScreen/CarsScreen.dart';
 import 'package:travel_application/Feature/View/Screens/HomeScreen/WidgetsHomeScreen.dart';
 import 'package:travel_application/Feature/View/WidgetsGlobal.dart';
 
 import '../../../../Core/ColorsManager.dart';
-import '../../../Model/CategoryHomeScreenClass.dart';
+
+import '../HotelScreen/HotelScreen.dart';
 
 class HomeScreen extends StatelessWidget {
-  List<Category> data = [
-    Category("Hotels", "assets/images/hotels.png"),
-    Category("Aircrafts", "assets/images/aircraft.png"),
-    Category("Trains", "assets/images/train.png"),
-    Category("Cars", "assets/images/car.png"),
-    Category("Events", "assets/images/event.png"),
-  ];
-  List<Hotel> dataHotels = [
-    Hotel(hotelImagePath: "assets/images/papandayan_1.png",hotelName:  "The Papandayan",
-       hotelAddress:  "Bandung, Indonesia",hotelIRDNew:  680.343, hotelIRDOld:  680.500,discountPercentage:  24),
-    Hotel(hotelImagePath: "assets/images/jambuluwukOceano.png",hotelName:  "Jambuluwuk Oceano",
-        hotelAddress: "Seminyak, Indonesia",hotelIRDNew:  446.343,hotelIRDOld:  446.700,discountPercentage:  50),
-    Hotel(hotelImagePath: "assets/images/papandayan_2.png",hotelName:  "The Papandayan",
-      hotelAddress:   "Bandung, Indonesia",hotelIRDNew:  680.343,hotelIRDOld:  680.500,discountPercentage:  24),
-  ];
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,7 +56,7 @@ class HomeScreen extends StatelessWidget {
                     context: context,
                     text: "Categories",
                     fontSize: 16,
-                    fontcolor: ColorsManager.colorCategoriesHomeScreen,
+                    fontcolor: ColorsManager().blankColor_121212,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
@@ -74,12 +64,29 @@ class HomeScreen extends StatelessWidget {
                   height: 120,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: data.length,
+                    itemCount: DataList.dataCategory.length,
                     itemBuilder: (ctx, index) {
-                      return WidgetsHomeScreen.cardCategory(
-                        context: context,
-                        categoryImagePath: data[index].categoryImage,
-                        categoryName: data[index].categoryName,
+                      return MaterialButton(
+                        padding: EdgeInsets.zero,
+                        onPressed: () {
+                          if(DataList.dataCategory[index].id=="1"){
+                            Navigator.of(context).push(
+                                MaterialPageRoute(builder: (ctx) {
+                                  return HotelScreen();
+                                }));
+                          }else if(DataList.dataCategory[index].id=="4"){
+                            Navigator.of(context).push(
+                                MaterialPageRoute(builder: (ctx) {
+                                  return CarScreen();
+                                }));
+                          }
+
+                        },
+                        child: WidgetsHomeScreen.cardCategory(
+                          context: context,
+                          categoryImagePath: DataList.dataCategory[index].categoryImage,
+                          categoryName: DataList.dataCategory[index].categoryName,
+                        ),
                       );
                     },
                   ),
@@ -94,7 +101,8 @@ class HomeScreen extends StatelessWidget {
                         context: context,
                         text: "Special for you",
                         fontSize: 14,
-                        fontcolor: ColorsManager.colorSpecialForYouHomeScreen,
+                        fontcolor: ColorsManager
+                            .colorsManager.blankColor_121212,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
@@ -107,7 +115,8 @@ class HomeScreen extends StatelessWidget {
                           context: context,
                           text: "View All",
                           fontSize: 14,
-                          fontcolor: ColorsManager.colorViewAllHomeScreen,
+                          fontcolor: ColorsManager
+                              .colorsManager.primaryColor_2277FE,
                           fontWeight: FontWeight.w700,
                         ),
                       ),
@@ -115,24 +124,69 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
                 Container(
-                  height: 300,
+                  margin: EdgeInsetsDirectional.only(bottom: 8),
+                  height: 310,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: dataHotels.length,
+                    itemCount: DataList.dataHotels.length,
                     itemBuilder: (ctx, index) {
-                      return WidgetsHomeScreen.cardHotels(
-                        context: context,
-                        hotelImagePath:  dataHotels[index].hotelImagePath,
-                        hotelName: dataHotels[index].hotelName,
-                        hotelAddress: dataHotels[index].hotelAddress,
-                        hotelIRDNew: dataHotels[index].hotelIRDNew,
-                        hotelIRDOld: dataHotels[index].hotelIRDOld,
-                        discountPercentage: dataHotels[index].discountPercentage
-                      );
+                      return WidgetsGlobal.cardHotels(
+                          context: context,
+                          hotelImagePath: DataList.dataHotels[index].imagePath,
+                          hotelName: DataList.dataHotels[index].name,
+                          hotelAddress: DataList.dataHotels[index].hotelAddress,
+                          hotelIRDNew: DataList.dataHotels[index].irdNew,
+                          hotelIRDOld: DataList.dataHotels[index].hotelIRDOld,
+                          discountPercentage:
+                          DataList.dataHotels[index].discountPercentage);
                     },
                   ),
                 ),
-                SizedBox(height: 24,),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: WidgetsGlobal.getColumnCarInformationTeavel(
+                      context: context,
+                      text_1: "Exciting road trip",
+                      text_2:
+                          "Now, you can rent a keyless car in order to take a stroll at your vacation !"),
+                ),
+                WidgetsGlobal.getListViewCars(context: context),
+                Padding(
+                  padding: const EdgeInsetsDirectional.only(
+                      start: 8, end: 8, bottom: 8),
+                  child: Image.asset(
+                    "assets/images/banner.png",
+                    width: MediaQuery.of(context).size.width,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                WidgetsGlobal.getColumnCarInformationTeavel(
+                    context: context,
+                    text_1: "Leave the tired",
+                    text_2: "The place is comfortable, the price is friendly"),
+                const SizedBox(
+                  height: 20,
+                ),
+                GridView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      childAspectRatio: 0.65,
+                    ),
+                    itemCount: DataList.dataHotels.length,
+                    itemBuilder: (ctx, index) {
+                      return WidgetsGlobal.cardHotels(
+                          context: context,
+                          hotelImagePath: DataList.dataHotels[index].imagePath,
+                          hotelName: DataList.dataHotels[index].name,
+                          hotelAddress: DataList.dataHotels[index].hotelAddress,
+                          hotelIRDNew: DataList.dataHotels[index].irdNew,
+                          hotelIRDOld: DataList.dataHotels[index].hotelIRDOld,
+                          discountPercentage:
+                          DataList.dataHotels[index].discountPercentage);
+                    }),
               ],
             ),
           ),

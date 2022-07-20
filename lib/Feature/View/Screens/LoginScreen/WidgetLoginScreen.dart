@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
-
 import '../../../../Core/ColorsManager.dart';
-import '../../../Localizations/LocalizationsModel/AppLocale.dart';
 import '../../WidgetsGlobal.dart';
 
 class WidgetsLoginScreen {
-
-
   static Widget myDivider() {
-    return const Expanded(
+    return  Expanded(
       flex: 2,
       child: Divider(
-        color: ColorsManager.dividerColorLoginScreen,
+        color: ColorsManager.colorsManager.lightBlueColor_EBF0FF,
         height: 1,
       ),
     );
@@ -27,7 +23,7 @@ class WidgetsLoginScreen {
       width: MediaQuery.of(context).size.width,
       height: 64,
       decoration: BoxDecoration(
-        border: Border.all(width: 1, color: Color(0xFFEBF0FF)),
+        border: Border.all(width: 1, color: const Color(0xFFEBF0FF)),
         borderRadius: BorderRadius.circular(5),
       ),
       child: MaterialButton(
@@ -37,17 +33,17 @@ class WidgetsLoginScreen {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Spacer(),
+            const Spacer(),
             WidgetsGlobal.customText(
                 context: context,
                 text: text,
                 fontSize: 14,
-                fontcolor: ColorsManager.colorTextContainerSitesLoginScreen,
+                fontcolor: ColorsManager.colorsManager.grayColor_7E7E7E,
                 fontWeight: FontWeight.w700),
-            Spacer(),
-            Spacer(),
+            const Spacer(),
+            const Spacer(),
             Image.asset("assets/images/$imageName"),
-            Spacer(),
+            const Spacer(),
 
           ],
         ),

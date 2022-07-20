@@ -20,10 +20,10 @@ class WidgetsIntroductionScreen {
         ),
         Text(
           tilte,
-          style: const TextStyle(
+          style:  TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.w700,
-              color: ColorsManager.colorTitlePageView),
+              color: ColorsManager.colorsManager.blankColor_121212),
         ),
         const SizedBox(
           height: 16,
@@ -31,29 +31,16 @@ class WidgetsIntroductionScreen {
         Text(
           subTitle,
           textAlign: TextAlign.center,
-          style: const TextStyle(
+          style:  TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w400,
-              color: ColorsManager.colorSubTitlePageView),
+              color: ColorsManager.colorsManager.grayColor_7E7E7E),
         ),
       ],
     );
   }
 
-  static Widget IndicatorPageView({
-    required bool isActive,
-  }) {
-    return Container(
-      width: 13,
-      height: 13,
-      margin: const EdgeInsetsDirectional.only(end: 5),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: isActive == true
-              ? ColorsManager.backgroundColorIndicator_1PageView
-              : ColorsManager.backgroundColorIndicator_2PageView),
-    );
-  }
+
 
   static Widget containerPageViewLessThan2(
   {
@@ -78,11 +65,10 @@ class WidgetsIntroductionScreen {
             },
             child: Text(
               "${getLang(context, "$skipText")}",
-              style: const TextStyle(
+              style:  TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w700,
-                  color: ColorsManager
-                      .colorTextBottomText_1PageViewScreen),
+                  color: ColorsManager.colorsManager.grayColor_7E7E7E),
             ),
           ),
           TextButton(
@@ -91,11 +77,10 @@ class WidgetsIntroductionScreen {
             },
             child: Text(
               "${getLang(context, "$nextText")}",
-              style: const TextStyle(
+              style:  TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w700,
-                  color: ColorsManager
-                      .colorTextBottomText_2PageViewScreen),
+                  color: ColorsManager.colorsManager.primaryColor_2277FE),
             ),
           ),
         ],
@@ -120,10 +105,10 @@ class WidgetsIntroductionScreen {
         },
         child: Text(
           "${getLang(context, "$startText")}",
-          style: const TextStyle(
+          style:  TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.w700,
-            color: ColorsManager.colorTextBottomText_2PageViewScreen,
+            color: ColorsManager.colorsManager.primaryColor_2277FE,
           ),
         ),
       ),

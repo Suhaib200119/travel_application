@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
-
+import 'package:travel_application/Feature/Localizations/LocalizationsModel/AppLocale.dart';
 import '../../../../Core/ColorsManager.dart';
 import '../../WidgetsGlobal.dart';
-import '../LoginScreen/LoginScreen.dart';
-import '../LoginScreen/WidgetLoginScreen.dart';
 
 class SignUpScreen extends StatelessWidget {
   var formKey = GlobalKey<FormState>();
-  TextEditingController tec_full_name = TextEditingController();
-  TextEditingController tec_email = TextEditingController();
-  TextEditingController tec_password = TextEditingController();
-  TextEditingController tec_repeat_asswsord = TextEditingController();
+  TextEditingController tecFullName = TextEditingController();
+  TextEditingController tecEmail = TextEditingController();
+  TextEditingController tecPassword = TextEditingController();
+  TextEditingController tecRepeatPassword = TextEditingController();
+
+  SignUpScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
@@ -32,7 +33,7 @@ class SignUpScreen extends StatelessWidget {
                   context: context,
                   text: "Welcome to Travel App",
                   fontSize: 16,
-                  fontcolor: ColorsManager.colorTextHeaderLoginScreen,
+                  fontcolor: ColorsManager.colorsManager.blankColor_121212,
                   fontWeight: FontWeight.w700,
                 ),
                 const SizedBox(
@@ -42,7 +43,7 @@ class SignUpScreen extends StatelessWidget {
                   context: context,
                   text: "Create a new account",
                   fontSize: 12,
-                  fontcolor: ColorsManager.colorSubTitleLoginScreen,
+                  fontcolor: ColorsManager.colorsManager.grayColor_7E7E7E,
                   fontWeight: FontWeight.w400,
                 ),
                 const SizedBox(
@@ -54,80 +55,83 @@ class SignUpScreen extends StatelessWidget {
                     children: [
                       WidgetsGlobal.myTextFormField(
                           context: context,
-                          controller: tec_full_name,
+                          controller: tecFullName,
                           keyboardType: TextInputType.name,
                           errorMessage: "You must enter the full name",
-                          prefixIcon: Icon(Icons.person),
+                          prefixIcon: const Icon(Icons.person),
                           hintText: "Enter full name"),
                       const SizedBox(
                         height: 8,
                       ),
                       WidgetsGlobal.myTextFormField(
                           context: context,
-                          controller: tec_email,
+                          controller: tecEmail,
                           keyboardType: TextInputType.emailAddress,
                           errorMessage: "You must enter the email",
-                          prefixIcon: Icon(Icons.email_outlined),
-                          hintText: "Enter Email"),
+                          prefixIcon: const Icon(Icons.email_outlined),
+                          hintText: "Enter Email",
+                          isEmail: true),
                       const SizedBox(
                         height: 8,
                       ),
                       WidgetsGlobal.myTextFormField(
                           context: context,
-                          controller: tec_password,
+                          controller: tecPassword,
                           keyboardType: TextInputType.visiblePassword,
                           errorMessage: "You must enter the password",
-                          prefixIcon: Icon(Icons.lock_outline),
+                          prefixIcon: const Icon(Icons.lock_outline),
                           hintText: "Enter Password"),
                       const SizedBox(
                         height: 8,
                       ),
                       WidgetsGlobal.myTextFormField(
                           context: context,
-                          controller: tec_repeat_asswsord,
+                          controller: tecRepeatPassword,
                           keyboardType: TextInputType.visiblePassword,
                           errorMessage: "You must repeat the same password",
-                          prefixIcon: Icon(Icons.lock_outline),
+                          prefixIcon: const Icon(Icons.lock_outline),
                           hintText: "Repeat Password"),
-
                       WidgetsGlobal.myButton(
                         context: context,
                         text: "Create",
                         function: () {
                           if (formKey.currentState!.validate()) {
-                            print("full name: ${tec_full_name.text.trim()}\n");
-                            print("email: ${tec_email.text.trim()}\n");
-                            print("password: ${tec_password.text.trim()}\n");
-                            print("password: ${tec_repeat_asswsord.text.trim()}\n");
+                            if (tecPassword.text != tecRepeatPassword.text) {
+                              showDialog(
+                                  context: context,
+                                  builder: (ctx) {
+                                    return AlertDialog(
+                                      title: Text(
+                                          "${getLang(context, "The password and the password repeat must be the same")}"),
+                                    );
+                                  });
+                            }
                           }
                         },
                       ),
                       Row(
                         children: [
-                          Spacer(),
+                          const Spacer(),
                           WidgetsGlobal.customText(
                               context: context,
                               text: "do you have an account?",
                               fontSize: 12,
-                              fontcolor:
-                              ColorsManager.colorTextCreateAccountLoginScreen,
+                              fontcolor: ColorsManager.colorsManager.primaryColor_2277FE,
                               fontWeight: FontWeight.w700),
                           TextButton(
                             onPressed: () {
-                             Navigator.pop(context);
+                              Navigator.pop(context);
                             },
                             child: WidgetsGlobal.customText(
                                 context: context,
                                 text: "click here",
                                 fontSize: 12,
-                                fontcolor: ColorsManager
-                                    .colorTextDoNotHaveAccountLoginScreen,
+                                fontcolor: ColorsManager.colorsManager.grayColor_7E7E7E,
                                 fontWeight: FontWeight.w700),
                           ),
-                          Spacer(),
+                          const Spacer(),
                         ],
                       ),
-
                     ],
                   ),
                 ),

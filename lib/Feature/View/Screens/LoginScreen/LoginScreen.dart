@@ -4,6 +4,7 @@ import 'package:travel_application/Feature/Localizations/LocalizationsModel/AppL
 import 'package:travel_application/Feature/View/Screens/LoginScreen/WidgetLoginScreen.dart';
 import 'package:travel_application/Feature/View/WidgetsGlobal.dart';
 
+import '../../LayoutApp.dart';
 import '../SignUpScreen/SignUpScreen.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -14,6 +15,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
@@ -34,7 +36,7 @@ class LoginScreen extends StatelessWidget {
                   context: context,
                   text: "Welcome to Travel App",
                   fontSize: 16,
-                  fontcolor: ColorsManager.colorTextHeaderLoginScreen,
+                  fontcolor: ColorsManager.colorsManager.blankColor_121212,
                   fontWeight: FontWeight.w700,
                 ),
                 const SizedBox(
@@ -44,7 +46,7 @@ class LoginScreen extends StatelessWidget {
                   context: context,
                   text: "Sign in to continue",
                   fontSize: 12,
-                  fontcolor: ColorsManager.colorSubTitleLoginScreen,
+                  fontcolor: ColorsManager.colorsManager.grayColor_7E7E7E,
                   fontWeight: FontWeight.w400,
                 ),
                 const SizedBox(
@@ -60,7 +62,9 @@ class LoginScreen extends StatelessWidget {
                           keyboardType: TextInputType.emailAddress,
                           errorMessage: "You must enter the email",
                           prefixIcon: Icon(Icons.email_outlined),
-                          hintText: "Enter Email"),
+                          hintText: "Enter Email",
+                        isEmail: true,
+                      ),
                       const SizedBox(
                         height: 8,
                       ),
@@ -71,7 +75,6 @@ class LoginScreen extends StatelessWidget {
                           errorMessage: "You must enter the password",
                           prefixIcon: const Icon(Icons.lock_outline),
                           hintText: "Enter Password"),
-
                       WidgetsGlobal.myButton(
                         context: context,
                         text: "sign in",
@@ -79,7 +82,10 @@ class LoginScreen extends StatelessWidget {
                           if (formKey.currentState!.validate()) {
                             print("email: ${tec_email.text.trim()}\n");
                             print("password: ${tec_password.text.trim()}\n");
-
+                            Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(builder: (ctx) {
+                              return LayoutApp();
+                            }));
                           }
                         },
                       ),
@@ -136,32 +142,34 @@ class LoginScreen extends StatelessWidget {
                       text: "Forgot the password",
                       fontSize: 12,
                       fontcolor:
-                          ColorsManager.colorTextForgetPasswordLoginScreen,
+                      ColorsManager.colorsManager.primaryColor_2277FE,
                       fontWeight: FontWeight.w700),
                 ),
                 Row(
                   children: [
-                    Spacer(),
+                    const Spacer(),
                     WidgetsGlobal.customText(
                         context: context,
                         text: "Don't have an account yet?",
                         fontSize: 12,
                         fontcolor:
-                            ColorsManager.colorTextCreateAccountLoginScreen,
+                        ColorsManager.colorsManager.primaryColor_2277FE,
                         fontWeight: FontWeight.w700),
                     TextButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (ctx){return SignUpScreen();}));
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (ctx) {
+                          return SignUpScreen();
+                        }));
                       },
                       child: WidgetsGlobal.customText(
                           context: context,
                           text: "Create account",
                           fontSize: 12,
-                          fontcolor: ColorsManager
-                              .colorTextDoNotHaveAccountLoginScreen,
+                          fontcolor: ColorsManager.colorsManager.grayColor_7E7E7E,
                           fontWeight: FontWeight.w700),
                     ),
-                    Spacer(),
+                    const Spacer(),
                   ],
                 ),
               ],

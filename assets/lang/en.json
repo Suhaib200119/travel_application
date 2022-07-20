@@ -6,6 +6,24 @@
   "You must enter the email": "You must enter the email",
   "Enter Password": "Enter Password",
   "You must enter the password": "You must enter the password",
+  "The email must contain the @ character.": "The email must contain the @ character.",
+  "Email must end with .com": "Email must end with .com",
+  "The email must contain the gmail word.": "The email must contain the gmail word.",
+  "View All": "View All",
+  "Exciting road trip": "Exciting road trip",
+  "Now, you can rent a keyless car in order to take a stroll at your vacation !": "Now, you can rent a keyless car in order to take a stroll at your vacation !",
+  "4.5 (5 Review)": "4.5 (5 Review)",
+  "All the facilities are okay and the service is good, it's just that the car parking is very limited, but it's okay because it can be tried. worth to staycation": "All the facilities are okay and the service is good, it's just that the car parking is very limited, but it's okay because it can be tried. worth to staycation",
+  "Muhammad Fadli": "Muhammad Fadli",
+  "May 02, 2021": "May 02, 2021",
+  "Lift": "Lift",
+  "Free Parking": "Free Parking",
+  "This accommodation is clean, safe and CHSE certified by the Ministry of Tourism and Creative Economy.": "This accommodation is clean, safe and CHSE certified by the Ministry of Tourism and Creative Economy.",
+
+
+
+
+
 
   "introduction Screen": "introductionScreen",
   "Hi, Welcome": "Hi, Welcome",
@@ -38,6 +56,7 @@
   "Create": "Create",
   "do you have an account?": "do you have an account?",
   "click here": "click here",
+  "The password and the password repeat must be the same": "The password and the password repeat must be the same",
 
   "home Screen": "home Screen",
   "Where do you want to vacation?": "Where do you want to vacation?",
@@ -48,12 +67,64 @@
   "Cars": "Cars",
   "Events": "Events",
   "Special for you": "Special for you",
-  "View All": "View All",
   "The Papandayan": "The Papandayan",
   "Bandung, Indonesia": "Bandung, Indonesia",
   "Jambuluwuk Oceano": "Jambuluwuk Oceano",
-  "Seminyak, Indonesia": "Seminyak, Indonesia"
+  "Seminyak, Indonesia": "Seminyak, Indonesia",
+  "Sunset Residence Codotel": "Sunset Residence Codotel",
+ "Sabrina 173Hotels": "Sabrina 173Hotels",
+  "Pekanbaru, Indonesia": "Pekanbaru, Indonesia",
+  "Trenz Hotels 133": "Trenz Hotels 133",
+  "Padang, Indonesia": "Padang, Indonesia",
+  "Golom Aplha Room by Vivo": "Golom Aplha Room by Vivo",
+  "Depok, Sleman": "Depok, Sleman",
 
+  "Car Rental & Drop Off in Bali": "Car Rental & Drop Off in Bali",
+  "Bali, Denpasar": "Bali, Denpasar",
+  "Car Rental & Drop Off in Yogyakarta": "Car Rental & Drop Off in Yogyakarta",
+  "Yogyakarta, Bantul": "Yogyakarta, Bantul",
+  "Leave the tired": "Leave the tired",
+  "The place is comfortable, the price is friendly": "The place is comfortable, the price is friendly",
+
+  "hotelScreen": "hotelscreen",
+  "Description": "Description",
+  "Properties": "Properties:",
+  "Wifi": "Wifi",
+  "Hot water": "Hot water",
+  "Cold water": "Cold water",
+  "Review": "Review",
+  "Starting from": "Starting from",
+  "rent": "rent",
+  "IDR 680.343": "IDR 680.343",
+
+
+  "carscreen": "carScreen",
+  "Toyota Agya car year 2021": "Toyota Agya car year 2021",
+  "Full Fuel": "Full Fuel",
+  "Cozy Interior": "Cozy Interior",
+"Living Tax": "Living Tax",
+
+
+"Order  Screen hotel": "orderScreen hotel ",
+  "Check-in": "Check-in",
+  "Check-out": "Check-out",
+  "Cannot be refunded": "Cannot be refunded",
+  "Thursday, June 24, 2021": "Thursday, June 24, 2021",
+  "Friday, 25 June 2021": "Friday, 25 June 2021",
+  "Like": "Like",
+  "Mr Muhammad Fadli": "Mr Muhammad Fadli",
+  "Merpati Sakti Street, Panam Pekanbaru, Riau Indonesia": "Merpati Sakti Street, Panam Pekanbaru, Riau Indonesia",
+  "+89484900200393": "+89484900200393",
+  "Edit": "Edit",
+  "Continue Payment": "Continue Payment",
+"Special request": "Special request",
+  "Add Special Request": "Add Special Request",
+
+  "Order  Screen Car": "orderScreen car ",
+  "people": "people",
+  "Borrowing": "Borrowing",
+  "Delivery": "Delivery",
+  "Choose Pick Up Location": "Choose Pick Up Location"
 
 
 }

@@ -1,7 +1,7 @@
 class Category{
-
+String id;
   String categoryName;
   String categoryImage;
 
-  Category(this.categoryName , this.categoryImage );
+  Category(this.id,this.categoryName , this.categoryImage );
 }

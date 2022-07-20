@@ -12,7 +12,7 @@ class SpalshScreen extends StatefulWidget {
 class _SpalshScreenState extends State<SpalshScreen> {
   @override
   void initState() {
-    Future.delayed(Duration(seconds: 3),(){
+    Future.delayed(const Duration(seconds: 3),(){
       Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx){
         return IntroductionScreen();
       }));
@@ -25,7 +25,7 @@ class _SpalshScreenState extends State<SpalshScreen> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        color: ColorsManager.backgroundColorSplashScreen,
+        color: ColorsManager.colorsManager.primaryColor_2277FE,
         child: Center(
           child: Image.asset("assets/images/logoApp.png"),
         ),

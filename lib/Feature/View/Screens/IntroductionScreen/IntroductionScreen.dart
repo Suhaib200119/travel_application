@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:travel_application/Core/ColorsManager.dart';
 import 'package:travel_application/Feature/Model/PageViewClass.dart';
 import 'package:travel_application/Feature/View/Screens/IntroductionScreen/WidgetIntroductionScreen.dart';
+import 'package:travel_application/Feature/View/WidgetsGlobal.dart';
 import '../../../Localizations/LocalizationsModel/AppLocale.dart';
 import '../../../Providers/ProviderChangeStatus.dart';
 import '../LoginScreen/LoginScreen.dart';
@@ -22,7 +23,7 @@ class IntroductionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var providerController = Provider.of<ProviderChangeStatus>(context);
     return Scaffold(
-      backgroundColor: ColorsManager.backgroundColorIntroductionScreen,
+      backgroundColor: ColorsManager.colorsManager.whiteColor,
       body: Container(
         margin: const EdgeInsetsDirectional.only(top: 64),
         width: MediaQuery.of(context).size.width,
@@ -35,7 +36,7 @@ class IntroductionScreen extends StatelessWidget {
               child: PageView(
                 controller: pageController,
                 onPageChanged: (index) {
-                  providerController.ChangeIndexPageView(index);
+                  providerController.changeIndexPageView(index);
                 },
                 children: [
                   WidgetsIntroductionScreen.CardPageView(
@@ -63,7 +64,7 @@ class IntroductionScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ...List.generate(data.length, (index) {
-                  return WidgetsIntroductionScreen.IndicatorPageView(
+                  return WidgetsGlobal.IndicatorPageView(
                       isActive: providerController.indexPageView == index);
                 }),
               ],

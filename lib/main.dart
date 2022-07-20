@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
+import 'package:travel_application/Feature/View/Screens/LoginScreen/LoginScreen.dart';
 import 'Feature/Localizations/LocalizationsModel/AppLocale.dart';
 import 'Feature/Providers/ProviderChangeStatus.dart';
+import 'Feature/View/LayoutApp.dart';
+import 'Feature/View/Screens/CarsScreen/CarsScreen.dart';
 import 'Feature/View/Screens/HomeScreen/HomeScreen.dart';
+import 'Feature/View/Screens/SplashScreen/SplashScreen.dart';
 
 
 void main() {
@@ -13,7 +17,6 @@ void main() {
       const SystemUiOverlayStyle(
     statusBarColor: Colors.white,
     statusBarIconBrightness: Brightness.dark
-
   ));
 }
 
@@ -54,7 +57,7 @@ class MyApp extends StatelessWidget {
             }
           },
           // locale: Locale("en", ""),
-          home:   HomeScreen(),
+          home:   LayoutApp(),
         );
       },
     );

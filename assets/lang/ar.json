@@ -6,6 +6,25 @@
   "You must enter the email": "يجب عليك إدخال البريد الإلكتروني",
   "Enter Password": "أدخل كلمة المرور",
   "You must enter the password": "يجب عليك إدخال كلمة المرور",
+  "The email must contain the @ character.": "يجب أن يحتوي البريد الإلكتروني على الحرف @",
+  "Email must end with .com": "يجب أن ينتهي البريد الإلكتروني بالمقطع .com",
+  "The email must contain the gmail word.": "يجب أن يحتوي البريد الإلكتروني على الحرف gmail",
+  "View All": "مشاهدة الكل",
+  "Exciting road trip": "رحلة برية مثيرة",
+  "Now, you can rent a keyless car in order to take a stroll at your vacation !": "الآن ، يمكنك استئجار سيارة بدون مفتاح من أجل التنزه في عطلتك!",
+  "4.5 (5 Review)": "4.5 (5 مراجعة)",
+  "All the facilities are okay and the service is good, it's just that the car parking is very limited, but it's okay because it can be tried. worth to staycation": "جميع المرافق جيدة والخدمة جيدة ، كل ما في الأمر أن موقف السيارات محدود للغاية ، لكن لا بأس لأنه يمكن تجربته. يستحق staycation",
+"Muhammad Fadli": "محمد فضلي",
+  "May 02, 2021": " 02 , مايو , 2021",
+  "Lift": "يرفع",
+  "Free Parking": "موقف سيارات مجاني",
+  "This accommodation is clean, safe and CHSE certified by the Ministry of Tourism and Creative Economy.": "هذا السكن نظيف وآمن ومعتمد من CHSE من قبل وزارة السياحة والاقتصاد الإبداعي.",
+
+
+
+
+
+
 
   "Hi, Welcome": "مرحبا , اهلا",
   "In the Travel app you can order planes,Hotel, Train, event searchto Car Rental": "في تطبيق السفر ، يمكنك طلب الطائرات والفنادق والقطارات والبحث عن الأحداث لتأجير السيارات",
@@ -19,7 +38,6 @@
 
   "login Screen": "loginScreen",
   "Sign in to continue": "تسجيل الدخول للمتابعة",
-
   "sign in": "تسجيل الدخول",
   "OR": "أو",
   "Sign in with Google": "تسجيل الدخول بواسطة جوجل",
@@ -39,6 +57,7 @@
   "Create": "إنشاء",
   "do you have an account?": "هل لديك حساب؟",
   "click here": "انقر هنا",
+  "The password and the password repeat must be the same": "يجب أن تكون كلمة المرور وإعادة كلمة المرور متطابقتين",
 
   "home Screen": "home Screen",
   "Where do you want to vacation?": "أين تريد الاجازة؟",
@@ -49,19 +68,66 @@
   "Cars": "السيارات",
   "Events": "الأحداث",
   "Special for you": "خصيصا لك",
-  "View All": "مشاهدة الكل",
   "The Papandayan": "باباندايان",
   "Bandung, Indonesia": "باندونغ ، إندونيسيا",
   "Jambuluwuk Oceano": "جامبولووك أوشينو",
-  "Seminyak, Indonesia": "سيمينياك ، إندونيسيا"
+  "Seminyak, Indonesia": "سيمينياك ، إندونيسيا",
+  "Sunset Residence Codotel": "صن ست ريزيدنس كودوتيل",
+  "Sabrina 173Hotels": "فنادق سابرينا 173",
+  "Pekanbaru, Indonesia": "بيكانبارو ، إندونيسيا",
+  "Trenz Hotels 133": "فنادق ترينز 133",
+  "Padang, Indonesia": "بادانغ ، إندونيسيا",
+  "Golom Aplha Room by Vivo": "غرفة جلوم أبلها من فيفو",
+  "Depok, Sleman": "ديبوك ، سليمان",
+
+  "Car Rental & Drop Off in Bali": "تأجير السيارات والتوصيل في بالي",
+  "Bali, Denpasar": "بالي ، دينباسار",
+  "Car Rental & Drop Off in Yogyakarta": "تأجير السيارات والتوصيل في يوجياكارتا",
+  "Yogyakarta, Bantul": "يوجياكارتا ، بانتول",
+  "Leave the tired": "اترك التعب",
+  "The place is comfortable, the price is friendly": "المكان مريح ، السعر ودود",
 
 
 
+  "hotelScreen": "hotelscreen",
+  "Description": "وصف",
+  "Properties": "خصائص:",
+  "Wifi": "واي فاي",
+  "Hot water": "ماء ساخن",
+  "Cold water": "ماء بارد",
+  "Review": "مراجعة",
+  "Starting from": "بدءاً من",
+  "rent": "استئجار",
+  "IDR 680.343": "IDR 680.343",
 
 
+  "carscreen": "carScreen",
+  "Toyota Agya car year 2021": "تويوتا اجيا سيارة عام 2021",
+  "Full Fuel": "وقود كامل",
+  "Cozy Interior": "الداخلية المريحة",
+  "Living Tax": "ضريبة المعيشة",
 
 
+  "Order  Screen": "orderScreen",
+  "Check-in": "دخول",
+  "Check-out": "خروج",
+  "Cannot be refunded": "لا يمكن ردها",
+  "Thursday, June 24, 2021": "الخميس 24 يونيو 2021",
+  "Friday, 25 June 2021": "الجمعة 25 يونيو 2021",
+  "Like": "إعجاب",
+  "Mr Muhammad Fadli": "السيد محمد فضلي",
+  "Merpati Sakti Street, Panam Pekanbaru, Riau Indonesia": "شارع ميرباتي ساكتى ، بنام بيكانبارو ، رياو إندونيسيا",
+  "+89484900200393": "+89484900200393",
+  "Edit": "تعديل",
+  "Continue Payment": "مواصلة الدفع",
+  "Special request": "طلب خاص",
+  "Add Special Request": "إضافة طلب خاص",
 
+  "Order  Screen Car": "orderScreen car ",
+  "people": "اشخاص",
+  "Borrowing": "الاقتراض",
+  "Delivery": "توصيل",
+  "Choose Pick Up Location": "اختر التقاط الموقع"
 
 
 }

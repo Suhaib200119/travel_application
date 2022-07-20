@@ -5,6 +5,8 @@ import 'package:travel_application/Feature/View/Screens/LoginScreen/WidgetLoginS
 import 'package:travel_application/Feature/View/WidgetsGlobal.dart';
 
 import '../../LayoutApp.dart';
+import '../../WidgetsGlobal/ImageLogoWidget.dart';
+import '../../WidgetsGlobal/MyButton.dart';
 import '../SignUpScreen/SignUpScreen.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -28,7 +30,7 @@ class LoginScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                WidgetsGlobal.imageLogo(),
+                ImageLogoWidget.imageLogo(),
                 const SizedBox(
                   height: 16,
                 ),
@@ -75,7 +77,7 @@ class LoginScreen extends StatelessWidget {
                           errorMessage: "You must enter the password",
                           prefixIcon: const Icon(Icons.lock_outline),
                           hintText: "Enter Password"),
-                      WidgetsGlobal.myButton(
+                      MyButton.getItem(
                         context: context,
                         text: "sign in",
                         function: () {

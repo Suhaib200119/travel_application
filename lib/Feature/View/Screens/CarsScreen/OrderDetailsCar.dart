@@ -4,13 +4,15 @@ import 'package:flutter/services.dart';
 import '../../../../Core/ColorsManager.dart';
 import '../../../DataList/DataList.dart';
 import '../../WidgetsGlobal.dart';
+import '../../WidgetsGlobal/CustomrInformationOrderScreen.dart';
+import '../../WidgetsGlobal/MyButton.dart';
 import 'WidgetsCarScreen.dart';
 
 class OrderDetailsCar extends StatelessWidget {
   String? type;
   late int index;
 
-  OrderDetailsCar(this.type, this.index);
+  OrderDetailsCar(this.type, this.index, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,87 +28,35 @@ class OrderDetailsCar extends StatelessWidget {
               Navigator.pop(context);
             },
             icon: const Icon(Icons.arrow_back_ios)),
-        title: Text("Order Details"),
+        title: const Text("Order Details"),
       ),
       body: SingleChildScrollView(
         child: Container(
           width: MediaQuery.of(context).size.width,
-          margin: EdgeInsets.all(16),
+          margin: const EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               WidgetCarScreen.getContainerDetails(
                 context: context,
-                imagePath: DataList.dataCars[index].imagePath,
-                nameItem: DataList.dataCars[index].name,
+                imagePath: DataList.dataCars[index].ImagePath,
+                nameItem: DataList.dataCars[index].categoryName,
                 borrowing: DataList.dataCars[index].borrowing,
                 delivery: DataList.dataCars[index].delivery,
                 people: DataList.dataCars[index].people,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 24,
               ),
-              Container(
-                width: MediaQuery.of(context).size.width,
-                height: 220,
-                padding: EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  border: Border.all(
-                      color: ColorsManager.colorsManager.primaryColor_2277FE,
-                      width: 1),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    WidgetsGlobal.customText(
-                        context: context,
-                        text: "Mr Muhammad Fadli",
-                        fontSize: 14,
-                        fontcolor:
-                            ColorsManager.colorsManager.blankColor_121212,
-                        fontWeight: FontWeight.w700),
-                    WidgetsGlobal.customText(
-                        context: context,
-                        text:
-                            "Merpati Sakti Street, Panam Pekanbaru, Riau Indonesia",
-                        fontSize: 12,
-                        fontcolor: ColorsManager.colorsManager.grayColor_7E7E7E,
-                        fontWeight: FontWeight.w400),
-                    WidgetsGlobal.customText(
-                        context: context,
-                        text: "+89484900200393",
-                        fontSize: 12,
-                        fontcolor: ColorsManager.colorsManager.grayColor_7E7E7E,
-                        fontWeight: FontWeight.w400),
-                    Row(
-                      children: [
-                        MaterialButton(
-                          onPressed: () {},
-                          child: WidgetsGlobal.customText(
-                              context: context,
-                              text: "Edit",
-                              fontSize: 14,
-                              fontcolor: ColorsManager.colorsManager.whiteColor,
-                              fontWeight: FontWeight.w700),
-                          color:
-                              ColorsManager.colorsManager.primaryColor_2277FE,
-                          height: 48,
-                        ),
-                        IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.delete,
-                              color:
-                                  ColorsManager.colorsManager.grayColor_7E7E7E,
-                            )),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
+              CustomrInformationOrderScreen.getItem(
+                  context: context,
+                  customrName: "Mr Muhammad Fadli",
+                  customrAddress:
+                  "Merpati Sakti Street, Panam Pekanbaru, Riau Indonesia",
+                  customrPhoneNumber: "+89484900200393",
+                  function: () {}),
+
+              const SizedBox(
                 height: 24,
               ),
               WidgetsGlobal.customText(
@@ -115,13 +65,13 @@ class OrderDetailsCar extends StatelessWidget {
                   fontSize: 14,
                   fontcolor: ColorsManager.colorsManager.blankColor_121212,
                   fontWeight: FontWeight.w700),
-              SizedBox(
+              const SizedBox(
                 height: 16,
               ),
               Container(
                 width: MediaQuery.of(context).size.width,
                 height: 60,
-                padding: EdgeInsets.all(16),
+                padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
                   border: Border.all(
                       color: ColorsManager.colorsManager.primaryColor_2277FE,
@@ -137,10 +87,10 @@ class OrderDetailsCar extends StatelessWidget {
                     fontWeight: FontWeight.w700),
 
               ),
-              SizedBox(
+              const SizedBox(
                 height: 16,
               ),
-              Container(
+              SizedBox(
                 width: MediaQuery.of(context).size.width,
                 child: Column(
                   children: [
@@ -163,7 +113,7 @@ class OrderDetailsCar extends StatelessWidget {
                             fontWeight: FontWeight.w700),
                       ],
                     ),
-                    WidgetsGlobal.myButton(
+                    MyButton.getItem(
                         context: context,
                         text: "Continue Payment",
                         function: () {}),

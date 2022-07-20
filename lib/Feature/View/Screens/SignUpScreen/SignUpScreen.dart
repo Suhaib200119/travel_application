@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:travel_application/Feature/Localizations/LocalizationsModel/AppLocale.dart';
 import '../../../../Core/ColorsManager.dart';
 import '../../WidgetsGlobal.dart';
+import '../../WidgetsGlobal/ImageLogoWidget.dart';
+import '../../WidgetsGlobal/MyButton.dart';
 
 class SignUpScreen extends StatelessWidget {
   var formKey = GlobalKey<FormState>();
@@ -25,7 +27,7 @@ class SignUpScreen extends StatelessWidget {
                 const EdgeInsetsDirectional.only(start: 16, end: 16, top: 48),
             child: Column(
               children: [
-                WidgetsGlobal.imageLogo(),
+                ImageLogoWidget.imageLogo(),
                 const SizedBox(
                   height: 16,
                 ),
@@ -91,7 +93,7 @@ class SignUpScreen extends StatelessWidget {
                           errorMessage: "You must repeat the same password",
                           prefixIcon: const Icon(Icons.lock_outline),
                           hintText: "Repeat Password"),
-                      WidgetsGlobal.myButton(
+                      MyButton.getItem(
                         context: context,
                         text: "Create",
                         function: () {

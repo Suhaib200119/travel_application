@@ -1,31 +1,33 @@
 class Hotel {
   String hotelId;
-  String imagePath;
-  String name;
+  String ImagePath;
+  String categoryName;
   String hotelAddress;
-  double irdNew;
-  double hotelIRDOld;
-  int discountPercentage;
+  double categoryIrd;
+  double hotelOldIrd;
+  int discountValue;
   List<String> propertiesList;
-  String desc;
-  String note;
-  String check_in;
-  String check_out;
-  int like;
+  String categoryDescription;
+  String noteOnHotel;
+  String checkIn;
+  String checkOut;
+  int numberOfLike;
+  double categoryRate;
 
   Hotel({
     required this.hotelId,
-    required this.imagePath,
-    required this.name,
+    required this.ImagePath,
+    required this.categoryName,
     required this.hotelAddress,
-    required this.irdNew,
-    required this.hotelIRDOld,
-    required this.discountPercentage,
+    required this.categoryIrd,
+    required this.hotelOldIrd,
+    required this.discountValue,
     required this.propertiesList,
-    required this.desc,
-    required this.note,
-    required this.check_in,
-    required this.check_out,
-    required this.like,
+    required this.categoryDescription,
+    required this.noteOnHotel,
+    required this.checkIn,
+    required this.checkOut,
+    required this.numberOfLike,
+    required this.categoryRate
   });
 }

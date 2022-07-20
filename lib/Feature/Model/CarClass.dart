@@ -1,14 +1,24 @@
 class Car {
   String carId;
-  String imagePath;
-  String name;
-  double irdNew;
+  String ImagePath;
+  String categoryName;
+  double categoryIrd;
   List<String> propertiesList;
-  String desc;
+  String categoryDescription;
   String borrowing;
   String delivery;
   int people;
+  double categoryRate;
 
-  Car({required this.carId ,required this.imagePath,required this.name,
-    required this.irdNew,required this.propertiesList,required this.desc,required this.borrowing,required this.delivery,required this.people});
+  Car(
+      {required this.carId,
+      required this.ImagePath,
+      required this.categoryName,
+      required this.categoryIrd,
+      required this.propertiesList,
+      required this.categoryDescription,
+      required this.borrowing,
+      required this.delivery,
+      required this.people,
+      required this.categoryRate});
 }

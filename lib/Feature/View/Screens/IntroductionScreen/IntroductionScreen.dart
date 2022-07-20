@@ -6,6 +6,7 @@ import 'package:travel_application/Feature/View/Screens/IntroductionScreen/Widge
 import 'package:travel_application/Feature/View/WidgetsGlobal.dart';
 import '../../../Localizations/LocalizationsModel/AppLocale.dart';
 import '../../../Providers/ProviderChangeStatus.dart';
+import '../../WidgetsGlobal/Indicator.dart';
 import '../LoginScreen/LoginScreen.dart';
 
 class IntroductionScreen extends StatelessWidget {
@@ -64,7 +65,7 @@ class IntroductionScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ...List.generate(data.length, (index) {
-                  return WidgetsGlobal.IndicatorPageView(
+                  return Indicator.IndicatorPageView(
                       isActive: providerController.indexPageView == index);
                 }),
               ],

@@ -4,9 +4,13 @@ import 'package:travel_application/Feature/Model/HotelClass.dart';
 import 'package:travel_application/Feature/View/Screens/CarsScreen/CarsScreen.dart';
 import 'package:travel_application/Feature/View/Screens/HomeScreen/WidgetsHomeScreen.dart';
 import 'package:travel_application/Feature/View/WidgetsGlobal.dart';
+import 'package:travel_application/Feature/View/WidgetsGlobal/SimpleTabBar.dart';
+import 'package:travel_application/Feature/View/WidgetsGlobal/VerticalSimpleTabBara.dart';
 
 import '../../../../Core/ColorsManager.dart';
 
+import '../../WidgetsGlobal/CardHotel.dart';
+import '../../WidgetsGlobal/ListViewCars.dart';
 import '../HotelScreen/HotelScreen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -130,27 +134,28 @@ class HomeScreen extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     itemCount: DataList.dataHotels.length,
                     itemBuilder: (ctx, index) {
-                      return WidgetsGlobal.cardHotels(
+                      return CardHotel.getItem(
                           context: context,
-                          hotelImagePath: DataList.dataHotels[index].imagePath,
-                          hotelName: DataList.dataHotels[index].name,
+                          hotelImagePath: DataList.dataHotels[index].ImagePath,
+                          hotelName: DataList.dataHotels[index].categoryName,
                           hotelAddress: DataList.dataHotels[index].hotelAddress,
-                          hotelIRDNew: DataList.dataHotels[index].irdNew,
-                          hotelIRDOld: DataList.dataHotels[index].hotelIRDOld,
+                          hotelIRDNew: DataList.dataHotels[index].categoryIrd,
+                          hotelIRDOld: DataList.dataHotels[index].hotelOldIrd,
                           discountPercentage:
-                          DataList.dataHotels[index].discountPercentage);
+                          DataList.dataHotels[index].discountValue,
+                          ratingValue: DataList.dataHotels[index].categoryRate);
                     },
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: WidgetsGlobal.getColumnCarInformationTeavel(
+                  child: VerticalSimpleTabBara.getItem(
                       context: context,
                       text_1: "Exciting road trip",
                       text_2:
                           "Now, you can rent a keyless car in order to take a stroll at your vacation !"),
                 ),
-                WidgetsGlobal.getListViewCars(context: context),
+                ListViewCars.getItem(context: context),
                 Padding(
                   padding: const EdgeInsetsDirectional.only(
                       start: 8, end: 8, bottom: 8),
@@ -160,7 +165,7 @@ class HomeScreen extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
-                WidgetsGlobal.getColumnCarInformationTeavel(
+                VerticalSimpleTabBara.getItem(
                     context: context,
                     text_1: "Leave the tired",
                     text_2: "The place is comfortable, the price is friendly"),
@@ -177,15 +182,16 @@ class HomeScreen extends StatelessWidget {
                     ),
                     itemCount: DataList.dataHotels.length,
                     itemBuilder: (ctx, index) {
-                      return WidgetsGlobal.cardHotels(
+                      return CardHotel.getItem(
                           context: context,
-                          hotelImagePath: DataList.dataHotels[index].imagePath,
-                          hotelName: DataList.dataHotels[index].name,
+                          hotelImagePath: DataList.dataHotels[index].ImagePath,
+                          hotelName: DataList.dataHotels[index].categoryName,
                           hotelAddress: DataList.dataHotels[index].hotelAddress,
-                          hotelIRDNew: DataList.dataHotels[index].irdNew,
-                          hotelIRDOld: DataList.dataHotels[index].hotelIRDOld,
+                          hotelIRDNew: DataList.dataHotels[index].categoryIrd,
+                          hotelIRDOld: DataList.dataHotels[index].hotelOldIrd,
                           discountPercentage:
-                          DataList.dataHotels[index].discountPercentage);
+                          DataList.dataHotels[index].discountValue,
+                      ratingValue: DataList.dataHotels[index].categoryRate);
                     }),
               ],
             ),
